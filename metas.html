@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Metas | VIGO Money</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="app-body">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand"><img src="assets/logo.svg" alt="" class="brand-logo" /><span>VIGO Money</span></a>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="metas.html" class="active">Metas</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="assistente.html">Assistente IA</a>
+      <a href="assinaturas.html">Assinatura</a>
+    </nav>
+    <button id="logoutBtn" class="btn btn-outline btn-full">Sair</button>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-header">
+      <div>
+        <span class="pill">Objetivos</span>
+        <h1>Metas financeiras</h1>
+        <p class="muted">Crie metas para guardar dinheiro, quitar dívida ou comprar algo importante.</p>
+      </div>
+    </header>
+
+    <section class="app-grid two-one">
+      <article class="panel-card">
+        <div class="panel-heading"><h2>Nova meta</h2><p>Defina um objetivo e acompanhe o progresso.</p></div>
+        <form id="goalForm" class="form-stack">
+          <div><label for="goalTitle">Nome da meta</label><input id="goalTitle" type="text" placeholder="Ex: reserva de emergência" required /></div>
+          <div class="form-row">
+            <div><label for="goalTarget">Valor objetivo</label><input id="goalTarget" type="number" min="0" step="0.01" placeholder="0,00" required /></div>
+            <div><label for="goalCurrent">Valor atual</label><input id="goalCurrent" type="number" min="0" step="0.01" placeholder="0,00" value="0" /></div>
+          </div>
+          <div><label for="goalDeadline">Data limite</label><input id="goalDeadline" type="date" /></div>
+          <button class="btn btn-primary btn-full" type="submit">Criar meta</button>
+          <p class="form-message" id="goalMessage"></p>
+        </form>
+      </article>
+
+      <article class="panel-card highlight-panel">
+        <h2>Ideia boa para o app</h2>
+        <p>No futuro, dá para criar um modo “desafio”: a pessoa escolhe uma meta e o site mostra missões semanais para economizar.</p>
+        <div class="tip-box">Ex: “economize R$ 50 esta semana evitando gastos com delivery”.</div>
+      </article>
+    </section>
+
+    <section class="panel-card">
+      <div class="panel-heading"><h2>Suas metas</h2><p>Atualize o valor atual conforme for economizando.</p></div>
+      <div id="goalsList" class="goals-list empty-state">Nenhuma meta criada ainda.</div>
+    </section>
+  </main>
+
+  <script type="module" src="./js/metas.js"></script>
+</body>
+</html>
