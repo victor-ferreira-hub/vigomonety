@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Entrar | VIGO Money</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="auth-page">
+  <main class="auth-layout">
+    <section class="auth-brand-panel">
+      <a href="index.html" class="brand auth-brand"><img src="assets/logo.svg" alt="" class="brand-logo" /><span>VIGO Money</span></a>
+      <h1>Controle financeiro simples para o dia a dia.</h1>
+      <p>Entre na sua conta para lançar gastos, acompanhar metas e gerar relatórios mensais.</p>
+      <div class="auth-preview-card">
+        <span>Saldo do mês</span>
+        <strong>R$ 1.842,50</strong>
+        <div class="progress"><span style="width: 72%"></span></div>
+        <small>Você está dentro do planejado.</small>
+      </div>
+    </section>
+
+    <section class="auth-card">
+      <div class="auth-tabs">
+        <button class="active" id="tabLogin">Entrar</button>
+        <button id="tabRegister">Criar conta</button>
+      </div>
+
+      <button class="btn btn-outline btn-full google-login-btn" id="googleLoginBtn" type="button">
+        <span>G</span> <strong class="google-label">Entrar com Google</strong>
+      </button>
+
+      <div class="auth-divider"><span>ou entre com e-mail</span></div>
+
+      <form id="loginForm" class="form-stack">
+        <div>
+          <label for="loginEmail">E-mail</label>
+          <input id="loginEmail" type="email" placeholder="seuemail@exemplo.com" required />
+        </div>
+        <div>
+          <label for="loginPassword">Senha</label>
+          <input id="loginPassword" type="password" placeholder="Sua senha" required minlength="6" />
+        </div>
+        <button class="btn btn-primary btn-full" type="submit">Entrar no painel</button>
+        <button class="link-button" id="resetPasswordBtn" type="button">Esqueci minha senha</button>
+      </form>
+
+      <form id="registerForm" class="form-stack hidden">
+        <div>
+          <label for="registerName">Nome</label>
+          <input id="registerName" type="text" placeholder="Seu nome" required />
+        </div>
+        <div>
+          <label for="registerEmail">E-mail</label>
+          <input id="registerEmail" type="email" placeholder="seuemail@exemplo.com" required />
+        </div>
+        <div>
+          <label for="registerPassword">Senha</label>
+          <input id="registerPassword" type="password" placeholder="Mínimo 6 caracteres" required minlength="6" />
+        </div>
+        <button class="btn btn-primary btn-full" type="submit">Criar conta grátis</button>
+        <small class="form-hint">A conta grátis já libera dashboard, metas e lançamentos manuais.</small>
+      </form>
+
+      <p class="form-message" id="authMessage"></p>
+      <a href="index.html" class="back-link">← Voltar para o site</a>
+    </section>
+  </main>
+
+  <script type="module" src="./js/auth.js"></script>
+</body>
+</html>
