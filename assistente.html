@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assistente IA | VIGO Money</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="app-body">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand"><img src="assets/logo.svg" alt="" class="brand-logo" /><span>VIGO Money</span></a>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnostico.html">Diagnóstico</a>
+      <a href="metas.html">Metas</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="assistente.html" class="active">Assistente IA</a>
+      <a href="assinaturas.html">Assinatura</a>
+    </nav>
+    <button id="logoutBtn" class="btn btn-outline btn-full">Sair</button>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-header">
+      <div>
+        <span class="pill">Beta</span>
+        <h1>Assistente financeiro IA</h1>
+        <p class="muted">Converse com o assistente usando seu resumo financeiro. A chave da OpenAI deve ficar no backend, nunca no JavaScript do navegador.</p>
+      </div>
+      <div class="month-filter">
+        <label for="assistantMonth">Mês base</label>
+        <input id="assistantMonth" type="month" />
+      </div>
+    </header>
+
+    <section class="app-grid two-one">
+      <article class="panel-card chat-panel">
+        <div class="panel-heading">
+          <h2>Chat financeiro</h2>
+          <p>Pergunte coisas como: “onde posso economizar?”, “qual limite de lazer devo usar?” ou “como sair do vermelho?”.</p>
+        </div>
+        <div id="chatMessages" class="chat-messages">
+          <div class="chat-bubble assistant">Me mande sua pergunta. Eu vou usar seus lançamentos do mês selecionado para responder de forma simples.</div>
+        </div>
+        <form id="assistantForm" class="assistant-form">
+          <textarea id="assistantQuestion" rows="3" placeholder="Ex: com base nos meus gastos, onde eu consigo economizar esse mês?" required></textarea>
+          <button class="btn btn-primary" type="submit">Enviar</button>
+        </form>
+        <p class="form-message" id="assistantMessage"></p>
+      </article>
+
+      <article class="panel-card">
+        <div class="panel-heading"><h2>Resumo enviado para IA</h2><p>Esses dados são usados para dar contexto ao assistente.</p></div>
+        <div id="aiSummary" class="diagnostic-result empty-state">Carregando resumo...</div>
+        <div class="notice-box">Importante: o assistente deve orientar organização financeira, não prometer investimento, lucro ou resultado garantido.</div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./js/assistente.js"></script>
+</body>
+</html>
