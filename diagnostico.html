@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico | VIGO Money</title>
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body class="app-body">
+  <aside class="sidebar">
+    <a href="dashboard.html" class="brand"><img src="assets/logo.svg" alt="" class="brand-logo" /><span>VIGO Money</span></a>
+    <nav class="sidebar-nav">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="diagnostico.html" class="active">Diagnóstico</a>
+      <a href="metas.html">Metas</a>
+      <a href="relatorios.html">Relatórios</a>
+      <a href="assistente.html">Assistente IA</a>
+      <a href="assinaturas.html">Assinatura</a>
+    </nav>
+    <button id="logoutBtn" class="btn btn-outline btn-full">Sair</button>
+  </aside>
+
+  <main class="app-main">
+    <header class="app-header">
+      <div>
+        <span class="pill">Diferencial do produto</span>
+        <h1>Diagnóstico financeiro</h1>
+        <p class="muted">Responda algumas perguntas ou use seus lançamentos do mês para receber um perfil, pontos de atenção e um plano simples de 7 dias.</p>
+      </div>
+      <div class="month-filter">
+        <label for="diagnosticMonth">Mês base</label>
+        <input id="diagnosticMonth" type="month" />
+      </div>
+    </header>
+
+    <section class="stats-grid">
+      <article class="stat-card"><span>Perfil atual</span><strong id="profileName">-</strong><small id="profileSummary">Faça o diagnóstico</small></article>
+      <article class="stat-card"><span>Score</span><strong id="scoreValue">0/100</strong><small>Saúde financeira</small></article>
+      <article class="stat-card"><span>Risco principal</span><strong id="riskValue">-</strong><small>O que mais pesa</small></article>
+      <article class="stat-card"><span>Meta sugerida</span><strong id="suggestedGoal">-</strong><small>Primeiro objetivo</small></article>
+    </section>
+
+    <section class="app-grid two-one">
+      <article class="panel-card">
+        <div class="panel-heading inline">
+          <div>
+            <h2>Questionário rápido</h2>
+            <p>Preencha com valores aproximados. Quanto mais realista, melhor o plano.</p>
+          </div>
+          <button id="fillFromTransactionsBtn" class="btn btn-outline" type="button">Usar lançamentos</button>
+        </div>
+
+        <form id="diagnosticForm" class="form-stack">
+          <div class="form-row">
+            <div><label for="incomeInput">Renda mensal</label><input id="incomeInput" type="number" min="0" step="0.01" placeholder="Ex: 2500" required /></div>
+            <div><label for="fixedInput">Gastos fixos</label><input id="fixedInput" type="number" min="0" step="0.01" placeholder="Aluguel, contas, faculdade" required /></div>
+          </div>
+          <div class="form-row">
+            <div><label for="variableInput">Gastos variáveis</label><input id="variableInput" type="number" min="0" step="0.01" placeholder="Mercado, lazer, transporte" required /></div>
+            <div><label for="debtInput">Dívidas / parcelas</label><input id="debtInput" type="number" min="0" step="0.01" placeholder="Cartão, empréstimo, carnê" value="0" /></div>
+          </div>
+          <div class="form-row">
+            <div><label for="savingsInput">Quanto consegue guardar hoje?</label><input id="savingsInput" type="number" min="0" step="0.01" placeholder="Ex: 200" value="0" /></div>
+            <div><label for="goalInput">Objetivo principal</label><select id="goalInput"><option>Organizar meus gastos</option><option>Guardar dinheiro</option><option>Quitar dívidas</option><option>Comprar algo importante</option><option>Começar a investir</option></select></div>
+          </div>
+          <div class="form-row">
+            <div><label for="creditInput">Usa cartão de crédito?</label><select id="creditInput"><option value="nao">Não</option><option value="sim">Sim</option><option value="muito">Sim, uso bastante</option></select></div>
+            <div><label for="behaviorInput">Comportamento</label><select id="behaviorInput"><option value="controlado">Tenho controle</option><option value="impulso">Compro por impulso</option><option value="atraso">Atraso contas às vezes</option><option value="nao-sei">Não sei para onde vai o dinheiro</option></select></div>
+          </div>
+          <button class="btn btn-primary btn-full" type="submit">Gerar diagnóstico</button>
+          <p class="form-message" id="diagnosticMessage"></p>
+        </form>
+      </article>
+
+      <article class="panel-card highlight-panel">
+        <h2>O que torna o VIGO diferente?</h2>
+        <p>Em vez de só mostrar números, o diagnóstico transforma seus lançamentos em um plano direto: onde está o problema, quanto limitar por semana e qual hábito mudar primeiro.</p>
+        <div class="tip-box" id="quickTip">Preencha o formulário para receber uma dica personalizada.</div>
+      </article>
+    </section>
+
+    <section class="app-grid">
+      <article class="panel-card">
+        <div class="panel-heading"><h2>Plano de ação</h2><p>Coisas práticas para fazer nos próximos 7 dias.</p></div>
+        <div id="actionPlan" class="idea-list compact empty-state">O plano aparece depois do diagnóstico.</div>
+      </article>
+      <article class="panel-card">
+        <div class="panel-heading"><h2>Leitura do orçamento</h2><p>Resumo automático do seu momento financeiro.</p></div>
+        <div id="budgetRead" class="diagnostic-result empty-state">Nenhuma análise gerada ainda.</div>
+      </article>
+    </section>
+  </main>
+
+  <script type="module" src="./js/diagnostico.js"></script>
+</body>
+</html>
