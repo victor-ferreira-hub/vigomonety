@@ -50,7 +50,7 @@ goalForm?.addEventListener('submit', async (event) => {
     setTimeout(() => setMessage(goalMessage, ''), 2500);
   } catch (error) {
     console.error(error);
-    setMessage(goalMessage, 'Erro ao criar meta. Confira as regras do Firestore.', 'error');
+    setMessage(goalMessage, 'Não consegui criar sua meta agora. Tente novamente em alguns instantes.', 'error');
   }
 });
 
@@ -63,7 +63,7 @@ function listenGoals(uid) {
   }, (error) => {
     console.error(error);
     goalsList.className = 'goals-list empty-state';
-    goalsList.textContent = 'Erro ao carregar metas. Confira as regras do Firestore.';
+    goalsList.textContent = 'Não consegui carregar suas metas agora. Tente novamente em alguns instantes.';
   });
 }
 

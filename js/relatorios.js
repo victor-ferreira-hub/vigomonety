@@ -42,7 +42,7 @@ function listenTransactions(uid) {
     renderReport();
   }, (error) => {
     console.error(error);
-    reportTable.innerHTML = '<tr><td colspan="5" class="empty-state">Erro ao carregar relatório. Confira as regras do Firestore.</td></tr>';
+    reportTable.innerHTML = '<tr><td colspan="5" class="empty-state">Não consegui carregar seu relatório agora. Tente novamente em alguns instantes.</td></tr>';
   });
 }
 

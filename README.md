@@ -1,4 +1,13 @@
-# VIGO Money v4
+# VIGO Money v5
+
+Versão com textos voltados para clientes finais.
+
+- Remove linguagem técnica da página pública.
+- Explica o que o produto faz de forma simples.
+- Planos: Básico grátis, Standard R$ 29,90 e Plus R$ 59,90.
+- Mantém a estrutura técnica de Firebase, pagamentos e assistente para configuração posterior.
+
+# VIGO Money v5
 
 Versão com landing page mais forte e divertida, inspirada na ideia de um assistente financeiro conversacional, mas com identidade própria.
 

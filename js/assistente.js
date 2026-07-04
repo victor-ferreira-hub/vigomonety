@@ -65,7 +65,7 @@ assistantForm?.addEventListener('submit', async (event) => {
   } catch (error) {
     const local = fallbackAnswer(question, summary);
     addBubble(local, 'assistant');
-    setMessage(assistantMessage, 'Modo demonstração: backend da OpenAI ainda não está ativo. Use a pasta server-example para ligar de verdade.', 'error');
+    setMessage(assistantMessage, 'Assistente em fase de testes: em breve ele responderá usando seu resumo financeiro completo.', 'error');
   }
 });
 

@@ -172,7 +172,7 @@ function traduzErro(code) {
     'auth/popup-blocked': 'O navegador bloqueou o pop-up do Google. Libere pop-ups para esse site.',
     'auth/unauthorized-domain': 'Domínio não autorizado no Firebase. Adicione localhost ou seu domínio real em Authentication > Configurações > Domínios autorizados.',
     'auth/network-request-failed': 'Erro de conexão. Verifique sua internet.',
-    'permission-denied': 'Conta criada, mas o Firestore bloqueou o salvamento. Publique as regras do arquivo firestore.rules no Firebase.'
+    'permission-denied': 'Conta criada, mas não consegui finalizar seu perfil agora. Tente entrar novamente em alguns instantes.'
   };
   return erros[code] || `Não foi possível concluir. Código do erro: ${code || 'desconhecido'}.`;
 }

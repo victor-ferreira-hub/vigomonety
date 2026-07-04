@@ -54,7 +54,7 @@ function listenTransactions(uid) {
     renderDashboard();
   }, (error) => {
     console.error(error);
-    transactionsTable.innerHTML = '<tr><td colspan="6" class="empty-state">Erro ao carregar movimentações. Confira as regras do Firestore.</td></tr>';
+    transactionsTable.innerHTML = '<tr><td colspan="6" class="empty-state">Não consegui carregar suas movimentações agora. Tente novamente em alguns instantes.</td></tr>';
   });
 }
 
@@ -79,7 +79,7 @@ transactionForm?.addEventListener('submit', async (event) => {
     setTimeout(() => setMessage(transactionMessage, ''), 2500);
   } catch (error) {
     console.error(error);
-    setMessage(transactionMessage, 'Erro ao salvar. Confira Firestore e Authentication.', 'error');
+    setMessage(transactionMessage, 'Não consegui salvar agora. Confira os dados e tente novamente.', 'error');
   }
 });
 

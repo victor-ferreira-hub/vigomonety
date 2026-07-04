@@ -41,7 +41,7 @@ function listenTransactions(uid) {
     allTransactions = snapshot.docs.map(item => ({ id: item.id, ...item.data() }));
   }, (error) => {
     console.error(error);
-    setMessage(diagnosticMessage, 'Não consegui carregar seus lançamentos. Confira as regras do Firestore.', 'error');
+    setMessage(diagnosticMessage, 'Não consegui carregar seus lançamentos agora. Tente novamente em alguns instantes.', 'error');
   });
 }
 
@@ -81,7 +81,7 @@ diagnosticForm?.addEventListener('submit', async (event) => {
       setMessage(diagnosticMessage, 'Diagnóstico gerado e salvo com sucesso.', 'success');
     } catch (error) {
       console.error(error);
-      setMessage(diagnosticMessage, 'Diagnóstico gerado, mas não consegui salvar no Firestore.', 'error');
+      setMessage(diagnosticMessage, 'Diagnóstico gerado, mas não consegui salvar no histórico agora.', 'error');
     }
   }
 });

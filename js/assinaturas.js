@@ -20,7 +20,7 @@ onAuthStateChanged(auth, (user) => {
 buttons.forEach(button => {
   button.addEventListener('click', async () => {
     const plan = button.dataset.plan;
-    checkoutMessage.textContent = 'Criando checkout...';
+    checkoutMessage.textContent = 'Abrindo pagamento seguro...';
     try {
       const response = await fetch(`${API_BASE_URL}/api/create-checkout`, {
         method: 'POST',
@@ -32,7 +32,7 @@ buttons.forEach(button => {
       if (!data.checkoutUrl) throw new Error('checkout-url-missing');
       window.location.href = data.checkoutUrl;
     } catch (error) {
-      checkoutMessage.textContent = 'Backend de pagamento ainda não está ativo. Abra a pasta server-example do ZIP, coloque as chaves no .env e suba o servidor para os botões funcionarem.';
+      checkoutMessage.textContent = 'Pagamento em preparação: em breve você será direcionado para o checkout seguro.';
     }
   });
 });
