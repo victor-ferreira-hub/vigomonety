@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assinatura | VIGO Money</title>
+  <title>Planos | VIGO Money</title>
   <link rel="icon" href="assets/logo.svg" type="image/svg+xml" />
   <link rel="stylesheet" href="./css/style.css" />
 </head>
@@ -11,12 +11,12 @@
   <aside class="sidebar">
     <a href="dashboard.html" class="brand"><img src="assets/logo.svg" alt="" class="brand-logo" /><span>VIGO Money</span></a>
     <nav class="sidebar-nav">
-      <a href="dashboard.html">Dashboard</a>
+      <a href="dashboard.html">Meu dinheiro</a>
       <a href="diagnostico.html">Diagnóstico</a>
       <a href="metas.html">Metas</a>
       <a href="relatorios.html">Relatórios</a>
-      <a href="assistente.html">Assistente IA</a>
-      <a href="assinaturas.html" class="active">Assinatura</a>
+      <a href="assistente.html">Assistente</a>
+      <a href="assinaturas.html" class="active">Planos</a>
     </nav>
     <button id="logoutBtn" class="btn btn-outline btn-full">Sair</button>
   </aside>
@@ -24,73 +24,72 @@
   <main class="app-main">
     <header class="app-header">
       <div>
-        <span class="pill">Monetização</span>
+        <span class="pill">Escolha seu plano</span>
         <h1>Planos do VIGO Money</h1>
-        <p class="muted">A vitrine de planos já está pronta. Para receber de verdade, conecte estes botões ao backend com Mercado Pago.</p>
+        <p class="muted">Comece grátis e escolha um plano melhor quando quiser mais acompanhamento, diagnóstico e assistente financeiro.</p>
       </div>
     </header>
 
-    <section class="plans-grid plans-v4">
+    <section class="pricing-grid app-pricing">
       <article class="plan-card">
         <span class="plan-name">Básico</span>
         <strong>Grátis</strong>
-        <p>Para quem quer começar sem pagar nada.</p>
+        <p>Para quem quer começar a organizar a vida financeira.</p>
         <ul>
-          <li>Dashboard mensal</li>
-          <li>Lançamentos manuais</li>
-          <li>1 meta financeira</li>
-          <li>Diagnóstico simples</li>
-          <li>Relatório básico</li>
+          <li>Cadastrar entradas e despesas</li>
+          <li>Ver saldo do mês</li>
+          <li>Separar gastos por categoria</li>
+          <li>Criar até 3 metas</li>
+          <li>Relatório simples</li>
         </ul>
-        <button class="btn btn-outline btn-full" disabled>Plano grátis</button>
+        <button class="btn btn-outline btn-full checkout-btn" data-plan="free">Continuar no Básico</button>
       </article>
 
-      <article class="plan-card featured-plan">
-        <span class="plan-ribbon">Mais escolhido</span>
+      <article class="plan-card featured">
+        <span class="badge">Mais escolhido</span>
         <span class="plan-name">Standard</span>
         <strong>R$ 29,90</strong>
-        <p>Para quem quer clareza, metas e relatórios melhores.</p>
+        <p>Para quem quer entender melhor o mês e economizar com metas.</p>
         <ul>
           <li>Tudo do Básico</li>
           <li>Metas ilimitadas</li>
-          <li>Diagnóstico completo</li>
-          <li>Relatórios em PDF</li>
-          <li>Alertas de limite por categoria</li>
-          <li>Assistente IA com limite mensal</li>
+          <li>Diagnóstico financeiro completo</li>
+          <li>Alertas de gastos por categoria</li>
+          <li>Relatórios completos</li>
+          <li>Plano de ação de 7 dias</li>
         </ul>
-        <button class="btn btn-primary btn-full checkout-btn" data-plan="standard">Assinar Standard</button>
+        <button class="btn btn-primary btn-full checkout-btn" data-plan="standard">Escolher Standard</button>
       </article>
 
       <article class="plan-card">
         <span class="plan-name">Plus</span>
         <strong>R$ 59,90</strong>
-        <p>Para quem quer IA, rotina semanal e acompanhamento completo.</p>
+        <p>Para quem quer uma experiência mais inteligente e personalizada.</p>
         <ul>
           <li>Tudo do Standard</li>
-          <li>Assistente IA avançado</li>
-          <li>Plano financeiro mensal</li>
-          <li>Modo casal/família</li>
-          <li>Resumo semanal inteligente</li>
-          <li>Suporte prioritário</li>
+          <li>Assistente financeiro inteligente</li>
+          <li>Plano mensal personalizado</li>
+          <li>Resumo semanal do dinheiro</li>
+          <li>Modo casal ou família</li>
+          <li>Prioridade em novos recursos</li>
         </ul>
-        <button class="btn btn-primary btn-full checkout-btn" data-plan="plus">Assinar Plus</button>
+        <button class="btn btn-primary btn-full checkout-btn" data-plan="plus">Escolher Plus</button>
       </article>
     </section>
 
     <section class="app-grid">
       <article class="panel-card">
-        <div class="panel-heading"><h2>Como o pagamento vai funcionar</h2><p>Fluxo recomendado para não expor credenciais no navegador.</p></div>
+        <div class="panel-heading"><h2>O que muda em cada plano?</h2><p>Cada plano foi pensado para um momento diferente.</p></div>
         <div class="idea-list compact">
-          <div><strong>1. Usuário escolhe o plano</strong><span>O botão chama seu backend: /api/create-checkout.</span></div>
-          <div><strong>2. Backend cria a cobrança</strong><span>Seu servidor usa o token secreto do Mercado Pago.</span></div>
-          <div><strong>3. Usuário paga no checkout</strong><span>Ele é redirecionado para pagar com PIX, cartão ou boleto.</span></div>
-          <div><strong>4. Webhook confirma</strong><span>Seu backend recebe a confirmação e libera Standard ou Plus no Firestore.</span></div>
+          <div><strong>Básico</strong><span>Ideal para começar a controlar gastos e saber se o mês está fechando.</span></div>
+          <div><strong>Standard</strong><span>Ideal para quem quer metas, diagnóstico e alertas para não passar do limite.</span></div>
+          <div><strong>Plus</strong><span>Ideal para quem quer orientação mais completa com assistente inteligente e resumo semanal.</span></div>
         </div>
       </article>
       <article class="panel-card highlight-panel">
-        <h2>Status da integração</h2>
-        <p id="checkoutMessage">Os botões estão prontos no front. Falta subir o backend de exemplo e colocar as chaves no arquivo .env.</p>
-        <div class="tip-box">Nunca coloque Access Token do Mercado Pago ou API Key da OpenAI dentro do HTML/JS público.</div>
+        <h2>Assinatura simples</h2>
+        <p id="checkoutMessage">Escolha o plano que combina com você. O pagamento seguro será exibido na próxima etapa.</p>
+        <div class="tip-box">Você pode começar pelo plano grátis e mudar de plano quando precisar.</div>
       </article>
     </section>
   </main>
